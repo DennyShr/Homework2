@@ -51,9 +51,10 @@ def main():
     while True:
         print('Your player HP: ', player['health'])
         print('Opponent    HP: ', opponent['health'], '\n')
-
-        kick = int(input('Please select kick: 1 - to head, 2 - to body, 3 - to foot = '))
-        block = int(input('Please select block: 1 - to head, 2 - to body, 3 - to foot = '))
+        ptint('Please select kick: 1 - to head, 2 - to body, 3 - to foot = ')
+        kick = int(input('You Choice: '))
+        print ('Please select block: 1 - to head, 2 - to body, 3 - to foot = ')
+        block = int(input('You Choice: '))
         print('\n')
         opponent_kick = random.randint(1,3)
         opponent_block = random.randint(1,3)
