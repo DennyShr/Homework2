@@ -25,7 +25,8 @@ def main():
         'health': 100,
     }
 
-    warrior = int(input('Please select warrior: 1 - strong, 2 - healthy, 3 - skill'))
+    print('Please select warrior: 1 - strong, 2 - healthy, 3 - skill')
+    warrior = int(input('Your choice: '))
     if warrior == 1:
         player = Player1
     elif warrior == 2:
@@ -65,10 +66,10 @@ def main():
             print('Opponent hit you :( ')
             player['health'] = player['health'] - (opponent['power'] * opponent['skill'])
 
-        if player['health'] < 0:
+        if player['health'] <= 0:
             break
 
-        if opponent['health'] < 0:
+        if opponent['health'] <= 0:
             win = True
             break
 
