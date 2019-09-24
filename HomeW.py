@@ -51,7 +51,7 @@ def main():
     while True:
         print('Your player HP: ', player['health'])
         print('Opponent    HP: ', opponent['health'], '\n')
-        ptint('Please select kick: 1 - to head, 2 - to body, 3 - to foot = ')
+        print('Please select kick: 1 - to head, 2 - to body, 3 - to foot = ')
         kick = int(input('You Choice: '))
         print ('Please select block: 1 - to head, 2 - to body, 3 - to foot = ')
         block = int(input('You Choice: '))
