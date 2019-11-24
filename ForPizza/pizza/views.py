@@ -1,11 +1,11 @@
 from django.views.generic import ListView, TemplateView
 from django.views import View
-from .models import Pizza_name
+from .models import PizzaName
 from django.http import HttpResponse
 
 
 class PizzasList(ListView):
-	model = Pizza_name
+	model = PizzaName
 	template_name = 'pizza/pizza.html' #template_name = '(modelname)_list.html' - by default
 
 class PizzaTemplateView(TemplateView):
@@ -15,6 +15,4 @@ class MyView(View):
 	def get(self, request):
 		return HttpResponse("Hello, it's view")
 
-	
 
-# Create your views here.
