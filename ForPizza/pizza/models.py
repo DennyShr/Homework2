@@ -18,7 +18,7 @@ class Ingredient(models.Model):
 		return 'Ingredient: {}'.format(self.name)
 
 class Pizza(models.Model):
-	pizza_name = models.ForeignKey(Pizza_name, on_delete=models.CASCADE)
+	pizza_name = models.ForeignKey(PizzaName, on_delete=models.CASCADE)
 	ingredients = models.ManyToManyField(Ingredient)
 
 	def __str__(self):
@@ -44,8 +44,10 @@ class PizzaOrdered(models.Model):
 	pizza = models.ForeignKey(Pizza, on_delete=models.CASCADE)
 	side_name = models.CharField('Base thickness', max_length=50, choices=SIDE, default=THIN)
 	additional_sauce = models.CharField('Additional sauce', max_length=50, choices=ADDITION_SAUCE, default=TOMATOSAUCE)
-	namber = models.IntegerField('Pizza number', default=1)
+	number = models.IntegerField('Pizza number', default=1)
 
+	def get_absolute_url(self):
+		return reverse('order-detail', kwargs={'pk': self.pk})
 
 class Every(models.Model):
 	text = models.TextField(default='0')
